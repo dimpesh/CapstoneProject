@@ -64,7 +64,8 @@
                     android:hint="@string/password"
                     android:inputType="textPassword"
                     android:textColor="@color/colorWhite"
-                    android:textColorHint="@color/colorWhite" />
+                    android:textColorHint="@color/colorWhite"
+                    />
 
             </android.support.design.widget.TextInputLayout>
 

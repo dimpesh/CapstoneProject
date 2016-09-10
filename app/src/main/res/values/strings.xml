@@ -8,5 +8,10 @@
     <string name="register">No account yet? Create one</string>
     <string name="forgot">Forgot password? Click here</string>
     <string name="google_sign_in">Sign In Using Google</string>
+    <string name="forgot_mailId">Mail id</string>
+    <string name="submit">SUBMIT</string>
+    <string name="forgot_activity_title">Recover Password</string>
+    <string name="create_activity_title">New User - Sign Up</string>
+    <string name="forgot_signin">Already a Member? Sign In</string>
 
 </resources>

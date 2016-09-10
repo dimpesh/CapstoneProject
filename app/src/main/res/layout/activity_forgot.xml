@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
+    tools:context="app.capstoneproject.ui.ForgotActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:id="@+id/activity_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/keyline_left_1"
+            android:layout_marginRight="@dimen/keyline_right">
+
+
+            <TextView
+                android:id="@+id/forgot_textView_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/title_stream"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_head" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/forgot_mail_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/forgot_textView_head"
+                android:layout_marginTop="@dimen/field_head1">
+
+                <EditText
+                    android:id="@+id/forgot_mailId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:hint="@string/forgot_mailId"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/forgot_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/forgot_mail_holder"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/submit"
+                android:textColor="@color/colorWhite"/>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

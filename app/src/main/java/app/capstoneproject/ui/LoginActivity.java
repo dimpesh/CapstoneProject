@@ -1,5 +1,6 @@
 package app.capstoneproject.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -33,11 +34,13 @@ public class LoginActivity extends AppCompatActivity {
                 break;
             }
             case R.id.forgotClick: {
-                Toast.makeText(this, "Forgot Password Clicked", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(this,ForgotActivity.class);
+                startActivity(intent);
                 break;
             }
             case R.id.createClick: {
-                Toast.makeText(this, "Create Account Clicked", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(this,CreateActivity.class);
+                startActivity(intent);
                 break;
 
             }

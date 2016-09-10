@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">CapstoneProject</string>
     <string name="splash_title">Lets Connect</string>
+    <string name="username">Username</string>
+    <string name="title_stream">Lets Connect</string>
+    <string name="password">Password</string>
+    <string name="signin_button">SIGN-IN</string>
+    <string name="register">No account yet? Create one</string>
+    <string name="forgot">Forgot password? Click here</string>
+    <string name="google_sign_in">Sign In Using Google</string>
+
 </resources>

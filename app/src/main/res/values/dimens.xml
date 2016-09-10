@@ -3,4 +3,21 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="splash_title_size">48sp</dimen>
+
+
+
+    <!--  screen margins, per the  Design guidelines. -->
+    <dimen name="keyline_left_1">16dp</dimen>
+    <dimen name="keyline_left_2">72dp</dimen>
+    <dimen name="keyline_right">16dp</dimen>
+    <dimen name="field_head1">32sp</dimen>
+    <dimen name="field_head2">24sp</dimen>
+
+
+    <!-- Text and other size dimens  -->
+    <dimen name="text_forgot">16sp</dimen>
+    <dimen name="text_head">40sp</dimen>
+    <dimen name="margin_for_signin_text">8dp</dimen>
+
+
 </resources>

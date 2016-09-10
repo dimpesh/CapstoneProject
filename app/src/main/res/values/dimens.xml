@@ -5,7 +5,6 @@
     <dimen name="splash_title_size">48sp</dimen>
 
 
-
     <!--  screen margins, per the  Design guidelines. -->
     <dimen name="keyline_left_1">16dp</dimen>
     <dimen name="keyline_left_2">72dp</dimen>

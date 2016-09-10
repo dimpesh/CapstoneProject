@@ -5,19 +5,16 @@
 
 
     <ScrollView
-        android:scrollbars="none"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
+        <RelativeLayout
             android:id="@+id/activity_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/keyline_left_1"
-            android:layout_marginRight="@dimen/keyline_right"
-            tools:context="paymanager.dimpesh.dimpeshpaymanager.MainActivity">
+            android:layout_marginRight="@dimen/keyline_right">
 
 
             <TextView

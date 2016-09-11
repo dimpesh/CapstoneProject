@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="@string/title_stream"
                 android:textColor="@color/colorWhite"
@@ -42,7 +42,6 @@
                     android:layout_alignBottom="@+id/button"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginBottom="20dp"
                     android:hint="@string/username"
                     android:textColor="@color/colorWhite"
                     android:textColorHint="@color/colorWhite" />
@@ -58,7 +57,7 @@
 
                 <EditText
                     android:id="@+id/password"
-                    android:layout_width="356dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
                     android:hint="@string/password"
@@ -99,25 +98,25 @@
                 android:layout_height="?android:attr/actionBarSize"
                 android:layout_below="@+id/google_signin_tag" />
 
-            <TextView
-                android:id="@+id/createClick"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/google_button"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="27dp"
-                android:text="@string/register"
-                android:textColor="@color/colorWhite"
-                android:textSize="@dimen/text_forgot" />
 
             <TextView
                 android:id="@+id/forgotClick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/createClick"
+                android:layout_below="@+id/google_button"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/forgot"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_forgot" />
+            <TextView
+                android:id="@+id/createClick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/forgotClick"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="@string/register"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/text_forgot" />
 

@@ -3,10 +3,214 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorPrimaryLight"
     tools:context="app.capstoneproject.ui.CreateActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:id="@+id/activity_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/keyline_left_1"
+            android:layout_marginRight="@dimen/keyline_right">
+
+
+            <TextView
+                android:id="@+id/create_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/title_stream"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_head" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/create_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/create_head">
+
+                <EditText
+                    android:id="@+id/create_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/create_name_hint"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/create_fname_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/create_name_layout">
+
+                <EditText
+                    android:id="@+id/create_fname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/create_fname_hint"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/create_mname_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/create_fname_layout">
+
+                <EditText
+                    android:id="@+id/create_mname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/create_mname_hint"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <RadioGroup
+                android:id="@+id/create_radio_gender"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/create_mname_layout"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/create_radio_male"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/male"
+                    android:textColor="@color/colorWhite" />
+
+                <RadioButton
+                    android:id="@+id/create_radio_female"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/female"
+                    android:textColor="@color/colorWhite" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/create_dob_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/create_radio_gender"
+                android:layout_marginTop="@dimen/keyline_left_1"
+                >
+            <EditText
+                android:id="@+id/create_dob"
+                android:hint="@string/create_dob_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:calendarViewShown="false"
+                android:layout_weight="1"/>
+                <ImageButton
+                    android:id="@+id/create_dob_button"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/calendar"
+                    android:padding="10dp"/>
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/create_address_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/create_dob_layout">
+
+                <EditText
+                    android:id="@+id/create_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:hint="@string/create_address_hint"
+                    android:minLines="4"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/create_phone_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/create_address_layout">
+
+                <EditText
+                    android:id="@+id/create_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/create_telephone_hint"
+                    android:textColor="@color/colorWhite"
+                    android:inputType="phone"
+                    android:textColorHint="@color/colorWhite" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/create_email_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/create_phone_layout">
+
+                <EditText
+                    android:id="@+id/create_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/create_email_hint"
+                    android:textColor="@color/colorWhite"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/colorWhite" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/create_password_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/create_email_layout">
+
+                <EditText
+                    android:id="@+id/create_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/create_submit_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/create_password_layout"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/create_submit_title"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorWhite" />
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
 
 </RelativeLayout>

@@ -13,5 +13,15 @@
     <string name="forgot_activity_title">Recover Password</string>
     <string name="create_activity_title">New User - Sign Up</string>
     <string name="forgot_signin">Already a Member? Sign In</string>
+    <string name="create_name_hint">Name</string>
+    <string name="create_fname_hint">Father\'s Name</string>
+    <string name="create_mname_hint">Mother\'s Name</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="create_dob_title">Date Of Birth</string>
+    <string name="create_address_hint">Address</string>
+    <string name="create_telephone_hint">Phone</string>
+    <string name="create_email_hint">Email id</string>
+    <string name="create_submit_title">SUBMIT</string>
 
 </resources>

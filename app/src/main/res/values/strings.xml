@@ -23,5 +23,12 @@
     <string name="create_telephone_hint">Phone</string>
     <string name="create_email_hint">Email id</string>
     <string name="create_submit_title">SUBMIT</string>
+    <string name="success">SUCCESS</string>
+    <string name="success_toast">Account Created Successfully...</string>
+    <string name="fail_toast">SignUp Failed</string>
+    <string name="unsuccessful">SignUp Failed...Try Again</string>
+    <string name="successful">Account Created Successfully </string>
+    <string name="auth_failed">Data Invalid...Try Again</string>
+    <string name="auth_success">Login Successful...Redirecting</string>
 
 </resources>

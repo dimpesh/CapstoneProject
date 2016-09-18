@@ -21,8 +21,13 @@
         <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.ForgotActivity" />
         <activity android:name=".ui.CreateActivity" />
-        <activity android:name=".ui.ContactsActivity"
-            android:theme="@style/NoActionBarAppTheme"/>
+        <activity
+            android:name=".ui.ContactsActivity"
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name=".ui.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

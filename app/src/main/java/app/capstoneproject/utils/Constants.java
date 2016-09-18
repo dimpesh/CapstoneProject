@@ -5,11 +5,9 @@ package app.capstoneproject.utils;
  */
 public class Constants
 {
-    public static final String FIREBASE_URL="";
-    public static final String name="users";
-    public static final String basic_details="basic details";
-    public static final String family_details="family details";
-    public static final String other_details="other details";
+    public static final String FIREBASE_URL="add_firebase_url_here";
+    public static final String BASIC_DETAILS="basic details";
+    public static final String OTHER_DETAILS="other details";
 
 
 

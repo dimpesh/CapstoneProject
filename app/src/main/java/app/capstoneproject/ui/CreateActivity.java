@@ -9,8 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -19,7 +21,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Calendar;
 
+import app.capstoneproject.Basic;
+import app.capstoneproject.Other;
 import app.capstoneproject.R;
+import app.capstoneproject.utils.Constants;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -48,6 +53,8 @@ public class CreateActivity extends AppCompatActivity {
 
     @BindView(R.id.create_submit_button)
     Button submit;
+    @BindView(R.id.create_radio_gender)
+    RadioGroup gender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,45 +107,44 @@ public class CreateActivity extends AppCompatActivity {
     public void onSubmit(View v)
     {
         Toast.makeText(getApplicationContext(),"Working...",Toast.LENGTH_SHORT).show();
-/*
-        Firebase ref=new Firebase(Constants.FIREBASE_URL);
-        ref.createUser(email.getText().toString(),password.getText().toString(),
-                new Firebase.ValueResultHandler<Map<String,Object>>()
-                {
-
-                    @Override
-                    public void onSuccess(Map<String, Object> stringObjectMap) {
-                        submit.setBackgroundColor(Color.GREEN);
-                        submit.setText(getString(R.string.success));
-                        Toast.makeText(getApplicationContext(),getString(R.string.success_toast),Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onError(FirebaseError firebaseError) {
-                        Toast.makeText(getApplicationContext(),getString(R.string.fail_toast),Toast.LENGTH_SHORT).show();
-
-                    }
-                });
-*/
         mAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
-                        if(task.isSuccessful())
-                        Toast.makeText(getApplicationContext(), R.string.successful,
-                                Toast.LENGTH_SHORT).show();
+                        if(task.isSuccessful()) {
+                            String emailStr=convertEmail(email.getText().toString());
+                            Basic basic=new Basic(emailStr,phone.getText().toString(),name.getText().toString());
+                            Firebase ref=new Firebase(Constants.FIREBASE_URL).child(Constants.BASIC_DETAILS);
+                            Firebase newRef=ref.push();
+                            newRef.setValue(basic);
+
+                            char genderStr;
+                            if(gender.getCheckedRadioButtonId()==R.id.create_radio_female)
+                            genderStr='f';
+                            else
+                            genderStr='m';
+                            Other other=new Other(fname.getText().toString(),
+                                    mname.getText().toString(),
+                                    genderStr,
+                                    dob.getText().toString(),
+                                    address.getText().toString());
+                            ref=new Firebase(Constants.FIREBASE_URL).child(Constants.OTHER_DETAILS);
+                            Firebase otherRef=ref.push();
+                            otherRef.setValue(other);
+                            Toast.makeText(getApplicationContext(), R.string.successful,
+                                    Toast.LENGTH_SHORT).show();
 
 
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
+
+
+                        }
+
                         if (!task.isSuccessful()) {
                             Toast.makeText(getApplicationContext(), R.string.unsuccessful,
                                     Toast.LENGTH_SHORT).show();
                         }
 
-                        // ...
                     }
                 });
 
@@ -160,4 +166,8 @@ public class CreateActivity extends AppCompatActivity {
         }
     }
 
+    public String convertEmail(String str)
+    {
+        return str;
+    }
 }

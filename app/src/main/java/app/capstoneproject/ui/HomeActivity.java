@@ -1,5 +1,8 @@
 package app.capstoneproject.ui;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -17,7 +20,7 @@ import app.capstoneproject.R;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    DrawerLayout drawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +37,7 @@ public class HomeActivity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -74,6 +77,7 @@ public class HomeActivity extends AppCompatActivity
         }
         if (id == R.id.action_logout) {
 
+
             return true;
         }
 
@@ -87,10 +91,27 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_search) {
-            // Handle the camera action
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+            Fragment fragment = ContactsFragment.newInstance();
+            ft.replace(R.id.my_container, fragment);
+            ft.commit();
+
+            // update selected item title, then close the drawer
+            setTitle("Contacts");
+/*
+            drawer.closeDrawer(mDrawerList);
+*/
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_manage) {
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+            Fragment fragment = ProfileFragment.newInstance();
+            ft.replace(R.id.my_container, fragment);
+            ft.commit();
+
+            setTitle(getString(R.string.profile_fragment_title));
 
         } else if (id == R.id.nav_share) {
 

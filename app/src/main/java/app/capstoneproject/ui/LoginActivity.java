@@ -24,6 +24,7 @@ import butterknife.OnClick;
 public class LoginActivity extends AppCompatActivity {
     private static String TAG="LoginActivity";
 
+
     @BindView(R.id.username)
     EditText email;
 
@@ -62,6 +63,8 @@ public class LoginActivity extends AppCompatActivity {
     public void signIn(View v) {
         switch (v.getId()) {
             case R.id.signInbutton: {
+
+
                 mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -69,7 +72,6 @@ public class LoginActivity extends AppCompatActivity {
                                 Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
                                 if(task.isSuccessful())
                                  startActivity(new Intent(LoginActivity.this,HomeActivity.class));
-
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.

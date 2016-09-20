@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="?android:attr/minHeight">
+    android:layout_height="match_parent"
+    android:weightSum="100">
 
     <android.support.v4.widget.CircleImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_weight="70"
+        android:src="@mipmap/ic_launcher"
+        android:layout_height="64dp"
+        />
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Welcome" />
+        android:text="Welcome"
+        android:layout_weight="30"
+        android:gravity="center"
+        android:textSize="28dp"
+        android:maxLines="1"
+        android:layout_height="64dp" />
 </LinearLayout>

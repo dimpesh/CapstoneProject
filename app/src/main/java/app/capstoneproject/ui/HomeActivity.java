@@ -89,10 +89,10 @@ public class HomeActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
 
         if (id == R.id.nav_search) {
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction ft = fragmentManager.beginTransaction();
             Fragment fragment = ContactsFragment.newInstance();
             ft.replace(R.id.my_container, fragment);
             ft.commit();
@@ -105,8 +105,6 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_manage) {
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction ft = fragmentManager.beginTransaction();
             Fragment fragment = ProfileFragment.newInstance();
             ft.replace(R.id.my_container, fragment);
             ft.commit();
@@ -116,6 +114,12 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
+            Fragment fragment = EventsFragment.newInstance();
+            ft.replace(R.id.my_container, fragment);
+            ft.commit();
+
+            setTitle(getString(R.string.events_fragment_title));
+
 
         }
 
